@@ -1,0 +1,33 @@
+/* Core */
+body {
+	margin: 0;
+	padding: 0;
+    background-color: white;
+    color: black;
+}
+
+#logo {
+    margin: 0 1em 0 1em;
+}
+
+#about {
+	font-family: sans;
+	font-size: small;
+	margin: 0 auto;
+	text-align: center;
+	clear: left;
+}
+
+#sidebar-nav {
+    float: left;
+    width: 20%;
+}
+
+#content {
+	margin-left: 20%;
+}
+
+/* HTML5 tags */
+header, section, footer, aside, nav, article, figure {
+    display: block;
+}

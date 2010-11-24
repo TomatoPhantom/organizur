@@ -1,0 +1,11 @@
+{% extends "core/base.html" %}
+
+{% block main %}
+
+<nav id="sidebar-nav">
+    <ul>{% block sidebar %}{% endblock %}</ul>
+</nav>
+
+<div id="content">{% block content %}{% endblock %}</div>
+
+{% endblock %}

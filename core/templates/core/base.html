@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>organizur - {% block title %}{% endblock %}</title>
+
+        <link rel="stylesheet" href="{{ STATIC_URL }}/css/common.css" type="text/css" />
+        <style type="text/css">{% block inline_css %}{% endblock %}</style>
+
+        <script language="javascript" type="text/javascript" src="{{ STATIC_URL }}/js/common.js"></script>
+        <script language="javascript" type="text/javascript">{% block inline_js %}{% endblock %}</script> 
+
+        <!--[if IE]>
+            <script src="{{ STATIC_URL }}/js/html5.js" />
+        <![endif]-->
+        <!--[if lte IE 7]>
+            <script src="{{ STATIC_URL }}/js/IE9.js" type="text/javascript" />
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <header id="banner" class="top-level">
+            <img id="logo" src="{{ STATIC_URL }}/images/organizur.png" />
+
+            <nav id="primary-site-nav">
+                <ul>{% include "core/primary-nav.html" %}</ul>
+            </nav>
+        </header>
+
+        <div id="main" class="top-level">
+            {% block main %}{% endblock %}
+        </div>
+
+        <footer id="about" class="top-level">
+            <nav id="secondary-site-nav">
+                <ul>{% include "core/secondary-nav.html" %}</ul>
+            </nav>
+
+            <p id="copyright">
+                &copy; {% now "Y" %} <a href="{% url organizur.core.home %}">organizur</a>
+            </p>
+        </footer>
+
+    </body>
+
+</html>
