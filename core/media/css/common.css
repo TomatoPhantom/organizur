@@ -1,23 +1,70 @@
-/* Core */
+/* Base */
 body {
 	margin: 0;
 	padding: 0;
     background-color: white;
     color: black;
+    font-family: sans;
 }
 
 #logo {
-    margin: 0 1em 0 1em;
+	margin: auto;
+	display: block;
+	border: 0;
+}
+
+#banner {
+	background: url('../images/gradient.png') repeat-x;
+}
+
+#primary-site-nav ul {
+	text-align: center;
+	font-size: smaller;
+	margin: 0;
+	padding: 0.3em;
+	background-color: black;
+    border-top: 0.35em solid #46a;
+}
+
+#primary-site-nav ul li {
+	display: inline;
+	padding: 0 0.5em;
+}
+
+#primary-site-nav ul a {
+	color: #ccc;
 }
 
 #about {
-	font-family: sans;
-	font-size: small;
-	margin: 0 auto;
-	text-align: center;
-	clear: left;
+    font-size: small;
+    padding: 0.4em;
+    clear: left;
+    border-top: 1px solid #ddd;
 }
 
+#secondary-site-nav ul {
+    text-align: center;
+    font-size: smaller;
+    margin: 0;
+    float: right;
+}
+
+#secondary-site-nav ul li {
+    display: inline;
+    padding: 0 0.5em;
+}
+
+#secondary-site-nav ul a {
+    color: #ccc;
+}
+
+#copyright {
+	margin: 0;
+	font-size: smaller;
+	color: #ddd;
+}
+
+/* Base Content */
 #sidebar-nav {
     float: left;
     width: 20%;
