@@ -1,6 +1,5 @@
 # Django settings for organizur project.
 
-from __future__ import unicode_literals
 from os import mkdir
 from os.path import abspath
 from os.path import dirname

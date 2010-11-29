@@ -48,9 +48,23 @@ a {
 
 #main h1 {
     font-size: 2em;
-    margin: 0;
+    margin: 0 0 0.25em 0;
     border-bottom: 0.05em solid #ddd;
     color: #666;
+}
+
+#main h2 {
+    font-size: 1.5em;
+    margin: 0 0 0.25em 0;
+    color: #999;
+}
+
+#main section {
+	margin: 0.5em 0 1.25em 0;
+}
+
+#main p {
+	margin: 0;
 }
 
 #about {
@@ -81,20 +95,23 @@ a {
 
 /* Base Content */
 #content {
-	margin-right: 25%;
+	margin-right: 22em;
+}
+
+#sidebar {
+	width: 20em;
+    clear: right;
+    float: right;
 }
 
 #sidebar section {
-	clear: right;
-    float: right;
-    width: 20%;
     padding: 1em;
     margin-bottom: 1em;
     border: 0.1em solid #ddd;
     -moz-border-radius: 1em;
-    -webkit-border-radius: 2em;
-    -khtml-border-radius: 2em;
-    border-radius: 2em;
+    -webkit-border-radius: 1em;
+    -khtml-border-radius: 1em;
+    border-radius: 1em;
 }
 
 #sidebar h1 {
@@ -104,6 +121,11 @@ a {
 	color: #666;
 	padding: 0.1em 0.1em 0.1em 0.75em;
     border-bottom: 0.2em solid #46a;
+}
+
+#sidebar p {
+	padding: 1em;
+	font-size: small;
 }
 
 #sidebar ul {
@@ -117,18 +139,35 @@ a {
 }
 
 #sidebar li a {
-	margin: 0 -1em;
+    margin: 0 -1em;
+}
+
+#sidebar li a, .button {
 	display: block;
     padding: 0.3em 1em;
 	text-decoration: none;
+    border: 0.1em solid white;
     -moz-border-radius: 1em;
-    -webkit-border-radius: 2em;
-    -khtml-border-radius: 2em;
-    border-radius: 2em;
+    -webkit-border-radius: 1em;
+    -khtml-border-radius: 1em;
+    border-radius: 1em;
 }
 
-#sidebar li:hover a {
+#sidebar li:hover a, .button {
 	background-color: #ddd;
+}
+
+.button {
+	font-weight: bold;
+	text-align: center;
+}
+
+.button:hover {
+	border: 0.1em solid #46a;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -khtml-border-radius: 1em;
+    border-radius: 1em;
 }
 
 /* HTML5 tags */
