@@ -17,14 +17,38 @@ from staticfiles.urls import staticfiles_urlpatterns
 
 __all__ = ('urlpatterns', 'handler404', 'handler500')
 
+#==============================================================================
+# Error Pages
+#==============================================================================
 handler404 = default_404_handler
 handler404 = default_500_handler
+
+#==============================================================================
+# Admin Tool
+#==============================================================================
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    (r'^admin/', include(admin.site.urls))
+)
+
+#==============================================================================
+# Static Pages
+#==============================================================================
+urlpatterns += patterns('',
     direct(r'^faq/?$', 'core/faq.html', 'organizur.core.faq'),
 )
 
+#==============================================================================
+# Core
+#==============================================================================
+urlpatterns += patterns('organizur.core.views',
+   url(r'^/?$', 'home', name = 'organizur.core.home')
+)
+
+#==============================================================================
+# Apps
+#==============================================================================
 urlpatterns += patterns('',
     (r'^admin/', include(admin.site.urls)),
     (r'^(?P<username>\w+)/imgur/?', include('organizur.imgur.urls')),
@@ -32,9 +56,19 @@ urlpatterns += patterns('',
     (r'^(?P<username>\w+)/surveys/?', include('organizur.surveys.urls')),
 )
 
-urlpatterns += patterns('organizur.core.views',
-   url(r'^/?$', 'home', name = 'organizur.core.home')
-)
+#==============================================================================
+# Login Page
+#==============================================================================
+if settings.DEBUG:
+    urlpatterns += patterns('organizur.core.views',
+        url(r'^login/?$', 'login', name = 'organizur.core.login')
+    )
+else:
+    # TODO: socialauth URLs.
+    pass
 
+#==============================================================================
+# Static Files
+#==============================================================================
 if settings.DEBUG:
     urlpatterns += staticfiles_urlpatterns()

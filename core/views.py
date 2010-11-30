@@ -10,3 +10,7 @@ from core.utils.render import html
 @html('core/home.html')
 def home(request):
     pass
+
+@html('core/login.html')
+def login(request):
+    pass
