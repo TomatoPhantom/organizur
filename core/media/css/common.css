@@ -39,6 +39,14 @@ a {
 
 #primary-site-nav ul a {
 	color: #ccc;
+	text-decoration: none;
+    border-bottom: 0.1em solid black;
+    border-top: 0.1em solid black;
+}
+
+#primary-site-nav ul a:hover {
+	border-bottom: 0.1em solid gold;
+    border-top: 0.1em solid gold;
 }
 
 #main {
