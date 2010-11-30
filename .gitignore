@@ -1,6 +1,7 @@
 .project
 .pydevproject
 *.pyc
+deployment_settings.py
 /sqlite
 /static
 /.settings

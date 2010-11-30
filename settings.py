@@ -4,16 +4,9 @@ from os import mkdir
 from os.path import abspath
 from os.path import dirname
 from os.path import join
-import errno
 
 def here(*path_segments):
     return join(abspath(dirname(__file__)), *path_segments)
-
-try:
-    mkdir(here('sqlite'))
-except OSError as e:
-    if e.errno not in (errno.EEXIST, errno.EAGAIN):
-        raise
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -118,3 +111,14 @@ INSTALLED_APPS = (
     'organizur.projects',
     'organizur.surveys',
 )
+
+try:
+    execfile(here('deployment_settings.py'))
+except:
+    import errno
+
+    try:
+        mkdir(here('sqlite'))
+    except OSError as e:
+        if e.errno not in (errno.EEXIST, errno.EAGAIN):
+            raise
