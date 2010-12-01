@@ -8,8 +8,12 @@ body {
     font-size: 1em;
 }
 
-a {
+a:before {
 	color: #46a;
+}
+
+a:visited {
+    color: #999;
 }
 
 #logo {
