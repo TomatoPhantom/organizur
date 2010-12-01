@@ -37,8 +37,10 @@ urlpatterns = patterns('',
 #==============================================================================
 urlpatterns += patterns('',
     direct(r'^faq/?$', 'core/faq.html', 'organizur.core.faq'),
-    direct(r'^faq/?$', 'core/privacy-policy.html', 'organizur.core.privacy'),
-    direct(r'^faq/?$', 'core/terms-of-service.html', 'organizur.core.tos'),
+    direct(r'^privacy-policy/?$', 'core/privacy-policy.html',
+           'organizur.core.privacy'),
+    direct(r'^terms-of-service/?$', 'core/terms-of-service.html',
+           'organizur.core.tos'),
 )
 
 #==============================================================================
