@@ -1,13 +1,5 @@
 # Django settings for organizur project.
 
-from os import mkdir
-from os.path import abspath
-from os.path import dirname
-from os.path import join
-
-def here(*path_segments):
-    return join(abspath(dirname(__file__)), *path_segments)
-
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -20,7 +12,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': here('sqlite', 'development.db'), # Or path to database file if using sqlite3.
+        'NAME': 'development.db', # Or path to database file if using sqlite3.
         'USER': '', # Not used with sqlite3.
         'PASSWORD': '', # Not used with sqlite3.
         'HOST': '', # Set to empty string for localhost. Not used with sqlite3.
@@ -96,8 +88,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'staticfiles.context_processors.static_url',
 )
 
-STATIC_ROOT = here('static')
-
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -105,6 +95,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
+    'socialauth',
+    'openid_consumer',
     'staticfiles',
     'organizur.core',
     'organizur.imgur',
@@ -112,13 +104,10 @@ INSTALLED_APPS = (
     'organizur.surveys',
 )
 
-try:
-    execfile(here('deployment_settings.py'))
-except:
-    import errno
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
-    try:
-        mkdir(here('sqlite'))
-    except OSError as e:
-        if e.errno not in (errno.EEXIST, errno.EAGAIN):
-            raise
+try:
+    from localsettings import *
+except ImportError:
+    pass

@@ -3,6 +3,6 @@
 *.pyc
 deployment_settings.py
 localsettings.py
-/sqlite
+development.db
 /static
 /.settings
