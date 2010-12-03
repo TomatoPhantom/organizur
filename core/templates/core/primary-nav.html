@@ -4,5 +4,5 @@
 <li><a href="#">Contact</a></li>
 
 {% if user.is_active %}
-    <li><a href="#" onclick="javascript:FB.logout(function(response){ document.location = '{% url auth_logout %}' })">Logout</a></li>
+    <li><a href="{% url auth_logout %}">Logout</a></li>
 {% endif %}
