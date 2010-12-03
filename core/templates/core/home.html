@@ -1,19 +1,11 @@
 {% extends 'core/base_sidebar.html' %}
-{% load facebook_tags %}
-{% load twitter_tags %}
 
 {% block title %}Home{% endblock %}
 
 {% block sidebar %}
-    <section>
-	    <h1>Sign In</h1>
-	    <p>
-	        Already have an account with Facebook or Twitter?
-	        Then you already have an account with organizur!
-        </p>
-	    {% twitter_button %}
-	    {% facebook_button %}
-    </section>
+
+    {% include "core/account_sidebar.html" %}
+
 {% endblock %}
  
 {% block content %}
