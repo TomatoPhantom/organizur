@@ -63,13 +63,11 @@ urlpatterns += patterns('',
 #==============================================================================
 # Login Page
 #==============================================================================
-if settings.DEBUG:
-    urlpatterns += patterns('organizur.core.views',
-        url(r'^login/?$', 'login', name = 'organizur.core.login')
-    )
-else:
-    # TODO: socialauth URLs.
-    pass
+urlpatterns += patterns('',
+    (r'^accounts/', include('socialregistration.urls')),
+    url(r'^logout/?$', 'django.contrib.auth.views.logout', {'next_page': '/'},
+        name = "auth_logout"),
+)
 
 #==============================================================================
 # Static Files

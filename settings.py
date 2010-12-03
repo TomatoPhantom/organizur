@@ -73,6 +73,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'socialregistration.middleware.FacebookMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
 )
 
 ROOT_URLCONF = 'organizur.core.urls'
@@ -85,6 +87,11 @@ TEMPLATE_DIRS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.contrib.messages.context_processors.messages',
+    'django.core.context_processors.request', 
     'staticfiles.context_processors.static_url',
 )
 
@@ -95,14 +102,25 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
-    'socialauth',
-    'openid_consumer',
+    'socialregistration',
     'staticfiles',
     'organizur.core',
     'organizur.imgur',
     'organizur.projects',
     'organizur.surveys',
+    'debug_toolbar'
 )
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'socialregistration.auth.TwitterAuth',
+    'socialregistration.auth.FacebookAuth',
+    'socialregistration.auth.OpenIDAuth'
+)
+
+SOCIALREGISTRATION_GENERATE_USERNAME = True
+
+INTERNAL_IPS = ('127.0.0.1',)
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'

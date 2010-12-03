@@ -1,15 +1,18 @@
 {% extends 'core/base_sidebar.html' %}
+{% load facebook_tags %}
+{% load twitter_tags %}
 
 {% block title %}Home{% endblock %}
 
 {% block sidebar %}
     <section>
-	    <h1>Login</h1>
+	    <h1>Sign In</h1>
 	    <p>
-	        Already have an account with Google, Yahoo, Facebook or Twitter?
+	        Already have an account with Facebook or Twitter?
 	        Then you already have an account with organizur!
         </p>
-	    <a href="{% url organizur.core.login %}" class="button">Login</a>
+	    {% twitter_button %}
+	    {% facebook_button %}
     </section>
 {% endblock %}
  

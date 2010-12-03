@@ -7,6 +7,7 @@
 from __future__ import unicode_literals
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
+from django.template.context import RequestContext
 from functools import wraps
 
 __all__ = ()
@@ -29,7 +30,8 @@ def render(render_func, **render_kwargs):
             context, headers = (context if isinstance(context, tuple) else
                                 (context, {}))
 
-            response = render_func(request, context, **render_kwargs)
+            response = render_func(request, RequestContext(request, context),
+                                   **render_kwargs)
 
             for header, value in headers.iteritems():
                 response[header] = value
