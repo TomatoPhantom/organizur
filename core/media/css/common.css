@@ -1,55 +1,47 @@
 /* Base */
 body {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
     background-color: white;
     color: black;
     font-family: sans;
     font-size: 1em;
 }
 
-a:before {
-	color: #46a;
-}
-
-a:visited {
-    color: #999;
-}
-
-#logo, .connect-button input {
-	margin: auto;
-	display: block;
-	border: 0;
+#logo {
+    margin: auto;
+    display: block;
+    border: 0;
 }
 
 #banner {
-	background: url('../images/gradient.png') repeat-x;
-	margin-bottom: 1em;
+    background: url('../images/gradient.png') repeat-x;
+    margin-bottom: 1em;
 }
 
 #primary-site-nav ul {
-	text-align: center;
-	font-size: smaller;
-	margin: 0;
-	padding: 0.3em;
-	background-color: black;
+    text-align: center;
+    font-size: smaller;
+    margin: 0;
+    padding: 0.3em;
+    background-color: black;
     border-top: 0.4em solid #46a;
 }
 
 #primary-site-nav ul li {
-	display: inline;
-	padding: 0 0.5em;
+    display: inline;
+    padding: 0 0.5em;
 }
 
 #primary-site-nav ul a {
-	color: #ccc;
-	text-decoration: none;
+    color: #ccc;
+    text-decoration: none;
     border-bottom: 0.1em solid black;
     border-top: 0.1em solid black;
 }
 
 #primary-site-nav ul a:hover {
-	border-bottom: 0.1em solid gold;
+    border-bottom: 0.1em solid gold;
     border-top: 0.1em solid gold;
 }
 
@@ -72,11 +64,11 @@ a:visited {
 }
 
 #main section {
-	margin: 0.5em 0 1.25em 0;
+    margin: 0.5em 0 1.25em 0;
 }
 
 #main p {
-	margin: 0;
+    margin: 0;
 }
 
 #about {
@@ -100,18 +92,18 @@ a:visited {
 }
 
 #copyright {
-	margin: 0;
-	font-size: smaller;
-	color: #ddd;
+    margin: 0;
+    font-size: smaller;
+    color: #ddd;
 }
 
 /* Base Content */
 #content {
-	margin-right: 22em;
+    margin-right: 22em;
 }
 
 #sidebar {
-	width: 20em;
+    width: 20em;
     clear: right;
     float: right;
 }
@@ -127,37 +119,37 @@ a:visited {
 }
 
 #sidebar h1 {
-	font-size: 1.2em;
-	margin: 0;
-	text-align: center;
-	color: #666;
-	padding: 0.1em 0.1em 0.1em 0.75em;
+    font-size: 1.2em;
+    margin: 0;
+    text-align: center;
+    color: #666;
+    padding: 0.1em 0.1em 0.1em 0.75em;
     border-bottom: 0.2em solid #46a;
 }
 
 #sidebar p {
-	padding: 1em;
-	font-size: small;
+    padding: 1em;
+    font-size: small;
 }
 
 #sidebar ul {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 #sidebar li {
-	margin: 0.5em 0.5em 0 0.5em;
-	list-style-type: none;
+    margin: 0.5em 0.5em 0 0.5em;
+    list-style-type: none;
 }
 
 #sidebar li a {
     margin: 0 -1em;
 }
 
-#sidebar li a, .button {
-	display: block;
+#sidebar li a,.button,input[type=image] {
+    display: block;
     padding: 0.3em 1em;
-	text-decoration: none;
+    text-decoration: none;
     border: 0.1em solid white;
     -moz-border-radius: 1em;
     -webkit-border-radius: 1em;
@@ -165,24 +157,49 @@ a:visited {
     border-radius: 1em;
 }
 
-#sidebar li:hover a, .button {
-	background-color: #ddd;
+.button,input[type=image] {
+    display: inline;
+    margin: 0.2em;
+    border: 0.1em solid #ddd;
+    font-weight: bold;
+    text-align: center;
+    color: #46a;
 }
 
-.button {
-	font-weight: bold;
-	text-align: center;
+.button:hover,input[type=image]:hover {
+    border: 0.1em solid #46a;
 }
 
-.button:hover {
-	border: 0.1em solid #46a;
-    -moz-border-radius: 1em;
-    -webkit-border-radius: 1em;
-    -khtml-border-radius: 1em;
-    border-radius: 1em;
+/* Sign In */
+.connect-button {
+    display: inline;
+}
+
+#google-login {
+    padding: 14px 27px 14px 28px;
+}
+
+#yahoo-login {
+    padding: 22px 23px 22px 23px;
+}
+
+#facebook-login {
+    padding: 17px 11px 18px 12px;
+}
+
+#twitter-login {
+    padding: 22px 30px 22px 31px;
+}
+
+#aol-login {
+    padding: 15px 24px 16px 25px;
+}
+
+#openid-login {
+    padding: 17px 27px 18px 28px;
 }
 
 /* HTML5 tags */
-header, section, footer, aside, nav, article, figure {
+header,section,footer,aside,nav,article,figure {
     display: block;
 }
