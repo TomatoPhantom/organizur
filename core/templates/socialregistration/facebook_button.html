@@ -1,6 +1,6 @@
 {% load socialregistration_tags %}
 
-<form class="connect-button" name="login" method="post" action="{% if logged_in %}{% url facebook_connect %}{% else %}{% url facebook_login %}{% endif %}">
+<form class="connect-button" name="login" method="post" action="{% if logged_in %}{% url organizur:facebook_connect %}{% else %}{% url organizur:facebook_login %}{% endif %}">
     {% social_csrf_token %}
     {% if next %}
         <input type="hidden" name="next" value="{{ next }}" />

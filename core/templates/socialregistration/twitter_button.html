@@ -1,6 +1,6 @@
 {% load twitter_tags socialregistration_tags %}
 
-<form class="connect-button" name="login" method="post" action="{% url twitter_redirect %}">
+<form class="connect-button" name="login" method="post" action="{% url organizur:twitter_redirect %}">
     {% social_csrf_token %}
     {% if next %}
         <input type="hidden" name="next" value="{{ next }}" />

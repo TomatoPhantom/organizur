@@ -14,3 +14,8 @@ def home(request):
 @html('core/login.html')
 def login(request):
     pass
+
+@html('core/settings.html')
+def settings(request):
+    pass
+

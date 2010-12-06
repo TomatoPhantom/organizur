@@ -86,7 +86,7 @@ MIDDLEWARE_CLASSES = (
     'socialregistration.middleware.FacebookMiddleware'
 )
 
-ROOT_URLCONF = 'organizur.core.urls'
+ROOT_URLCONF = 'organizur.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".

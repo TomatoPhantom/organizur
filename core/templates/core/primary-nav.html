@@ -1,11 +1,15 @@
-<li><a href="{% url organizur.core.home %}">Home</a></li>
+<li><a href="{% url organizur:home %}">Home</a></li>
 <li><a href="#">Blog</a></li>
 <li><a href="#">About</a></li>
 <li><a href="#">Contact</a></li>
 
 {% if user.is_active %}
+
+    <li><a href="{% url organizur:settings"></a></li>
+
     {% if user.is_staff %}
         <li><a href="{% url admin:index %}">Admin</a></li>
     {% endif %}
-    <li><a href="{% url auth_logout %}">Logout</a></li>
+
+    <li><a href="{% url organizur:logout %}">Logout</a></li>
 {% endif %}
