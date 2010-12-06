@@ -5,7 +5,7 @@
 
 {% if user.is_active %}
 
-    <li><a href="{% url organizur:settings"></a></li>
+    <li><a href="{% url organizur:settings %}">Settings</a></li>
 
     {% if user.is_staff %}
         <li><a href="{% url admin:index %}">Admin</a></li>

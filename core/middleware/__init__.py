@@ -24,7 +24,7 @@ class RedirectSocialLoginMiddleware(object):
         """"""
 
         if any(response.content == error for error in self.__ERROR_MESSAGES):
-            return HttpResponseRedirect(reverse('organizur.core.home'))
+            return HttpResponseRedirect(reverse('organizur:home'))
 
         return response
 

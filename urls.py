@@ -10,6 +10,7 @@ from django.conf.urls.defaults import handler404 as default_404_handler
 from django.conf.urls.defaults import handler500 as default_500_handler
 from django.conf.urls.defaults import include
 from django.conf.urls.defaults import patterns
+from django.conf.urls.defaults import url
 from django.contrib import admin
 from staticfiles.urls import staticfiles_urlpatterns
 
@@ -34,8 +35,7 @@ urlpatterns = patterns('',
 # Apps
 #==============================================================================
 urlpatterns += patterns('',
-    (r'^', include('organizur.core.urls', namespace = 'organizur',
-                   app_name = 'organizur')),
+    (r'^', include('organizur.core.urls')),
     (r'^(?P<username>\w+)/imgur/?',
      include('organizur.imgur.urls', namespace = 'imgur', app_name = 'imgur')),
     (r'^(?P<username>\w+)/projects/?',
