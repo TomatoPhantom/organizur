@@ -4,5 +4,8 @@
 <li><a href="#">Contact</a></li>
 
 {% if user.is_active %}
+    {% if user.is_staff %}
+        <li><a href="{% url admin:index %}">Admin</a></li>
+    {% endif %}
     <li><a href="{% url auth_logout %}">Logout</a></li>
 {% endif %}

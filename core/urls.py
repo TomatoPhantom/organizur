@@ -24,23 +24,23 @@ handler404 = default_404_handler
 handler404 = default_500_handler
 
 #==============================================================================
-# Admin Tool
-#==============================================================================
-admin.autodiscover()
-
-urlpatterns = patterns('',
-    (r'^admin/', include(admin.site.urls))
-)
-
-#==============================================================================
 # Static Pages
 #==============================================================================
-urlpatterns += patterns('',
+urlpatterns = patterns('',
     direct(r'^faq/?$', 'core/faq.html', 'organizur.core.faq'),
     direct(r'^privacy-policy/?$', 'core/privacy-policy.html',
            'organizur.core.privacy'),
     direct(r'^terms-of-service/?$', 'core/terms-of-service.html',
            'organizur.core.tos'),
+)
+
+#==============================================================================
+# Admin Tool
+#==============================================================================
+admin.autodiscover()
+
+urlpatterns += patterns('',
+    (r'^admin/', include(admin.site.urls))
 )
 
 #==============================================================================
