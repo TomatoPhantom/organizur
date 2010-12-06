@@ -109,6 +109,7 @@ body {
 }
 
 #sidebar section {
+    font-size: small;
     padding: 1em;
     margin-bottom: 1em;
     border: 0.1em solid #ddd;
@@ -127,9 +128,20 @@ body {
     border-bottom: 0.2em solid #46a;
 }
 
+#sidebar footer {
+    color: #666;
+    margin-top: 0.75em;
+    padding: 1em;
+    border-top: 0.2em solid #46a;
+}
+
+#sidebar footer p {
+    font-size: 0.75em;
+    padding: 0;
+}
+
 #sidebar p {
     padding: 1em;
-    font-size: small;
 }
 
 #sidebar ul {
